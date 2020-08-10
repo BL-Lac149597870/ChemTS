@@ -24,7 +24,6 @@ from make_smile import zinc_data_with_bracket_original,zinc_processed_with_brack
 
 from keras.layers import Conv1D, MaxPooling1D
 #from combine_bond_atom import organic, process_organic,bond_atom
-
 def load_data():
 
     sen_space=[]
@@ -251,5 +250,5 @@ if __name__ == "__main__":
     optimizer=Adam(lr=0.01)
     print(model.summary())
     model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
-    model.fit(X,y_train_one_hot,nb_epoch=100, batch_size=512,validation_split=0.1)
+    model.fit(X,y_train_one_hot,epochs=100, batch_size=512,validation_split=0.1)
     save_model(model)

@@ -4,7 +4,7 @@ import random
 import random as pr
 import numpy as np
 from copy import deepcopy
-from types import IntType, ListType, TupleType, StringTypes
+# from types import IntType, ListType, TupleType, StringTypes
 import itertools
 import time
 import math
@@ -123,7 +123,7 @@ def MCTS(root, verbose = False):
         while node.childNodes!=[]:
             node = node.Selectnode()
             state.SelectPosition(node.position)
-        print "state position:,",state.position
+        print ("state position:,",state.position)
 
 
         """------------------------------------------------------------------"""
@@ -153,7 +153,7 @@ def MCTS(root, verbose = False):
                 node.Addnode(nodeadded[m],state)
                 node_pool.append(node.childNodes[i])
                 depth.append(len(state.position))
-                print "current minmum score",min_score
+                print ("current minmum score",min_score)
                 if rdock_score[i]<=min_score:
                     min_score_distribution.append(rdock_score[i])
                     min_score=rdock_score[i]
@@ -177,12 +177,11 @@ def MCTS(root, verbose = False):
 
     #print "all valid compounds:",valid_compound
     #print "all active compounds:",desired_compound
-    print "rdock_score",score_distribution
-    print "num valid_compound:",len(valid_compound)
-    print "valid compounds",valid_compound
-    print "depth",depth
-    print "min_score",min_score_distribution
-
+    print ("rdock_score",score_distribution)
+    print ("num valid_compound:",len(valid_compound))
+    print ("valid compounds",valid_compound)
+    print ("depth",depth)
+    print ("min_score",min_score_distribution)
 
     return valid_compound
 
@@ -200,7 +199,7 @@ def UCTchemical():
 if __name__ == "__main__":
     smile_old=zinc_data_with_bracket_original()
     val,smile=zinc_processed_with_bracket(smile_old)
-    print val
+    print (val)
 
 
     model=loaded_model()

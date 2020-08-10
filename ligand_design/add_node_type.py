@@ -62,7 +62,7 @@ def expanded_node(model,state,val):
 
     all_nodes=list(set(all_nodes))
 
-    print all_nodes
+    print (all_nodes)
 
 
 
@@ -84,7 +84,7 @@ def node_to_add(all_nodes,val):
     for i in range(len(all_nodes)):
         added_nodes.append(val[all_nodes[i]])
 
-    print added_nodes
+    print (added_nodes)
 
     return added_nodes
 
@@ -194,7 +194,7 @@ def check_node_type(new_compound):
                 molscore=None
             if molscore!=None:
                 SA_score = -sascorer.calculateScore(molscore)
-            esle:
+            else:
                 SA_score=1000
             cycle_list = nx.cycle_basis(nx.Graph(rdmolops.GetAdjacencyMatrix(MolFromSmiles(new_compound[i]))))
             if len(cycle_list) == 0:

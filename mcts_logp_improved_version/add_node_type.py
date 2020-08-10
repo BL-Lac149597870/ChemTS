@@ -60,7 +60,7 @@ def expanded_node(model,state,val):
 
     all_nodes=list(set(all_nodes))
 
-    print all_nodes
+    print (all_nodes)
 
 
 
@@ -82,7 +82,7 @@ def node_to_add(all_nodes,val):
     for i in range(len(all_nodes)):
         added_nodes.append(val[all_nodes[i]])
 
-    print added_nodes
+    print (added_nodes)
 
     return added_nodes
 
@@ -221,7 +221,7 @@ def check_node_type(new_compound,SA_mean,SA_std,logP_mean,logP_std,cycle_mean,cy
     return node_index,score,valid_compound,all_smile
 
 def logp_calculation(new_compound):
-    print new_compound[0]
+    print (new_compound[0])
     logp_value=[]
     valid_smile=[]
     all_smile=[]
