@@ -212,15 +212,19 @@ def save_model(model):
     print("Saved model to disk")
 
 if __name__ == "__main__":
+    #smiles字符串数组
     smile=zinc_data_with_bracket_original()
+
     valcabulary,all_smile=zinc_processed_with_bracket(smile)
-    print(valcabulary)
-    print(len(all_smile))
+    # print(valcabulary)
+    # print(len(all_smile))
+
+    #返回数字索引
     X_train,y_train=prepare_data(valcabulary,all_smile)
   
     maxlen=81
 
-
+    #填充或裁剪序列 使所有数组长度相同  numpy数组(len(sequences), maxlen)
     X= sequence.pad_sequences(X_train, maxlen=81, dtype='int32',
         padding='post', truncating='pre', value=0.)
     y = sequence.pad_sequences(y_train, maxlen=81, dtype='int32',
@@ -228,13 +232,14 @@ if __name__ == "__main__":
     
     
     y_train_one_hot = np.array([to_categorical(sent_label, num_classes=len(valcabulary)) for sent_label in y])
-    print (y_train_one_hot.shape)
-
+    # print (y_train_one_hot.shape, len(valcabulary), X.shape)
+    # (249456, 81, 64) 64 (249456, 81)
     vocab_size=len(valcabulary)
     embed_size=len(valcabulary)
 
     
     N=X.shape[1]
+  
 
 
     model = Sequential()

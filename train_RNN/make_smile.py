@@ -73,6 +73,8 @@ def zinc_processed_with_bracket(sen_space):
         while j<len(word_space):
             word_space1=[]
             #word_space1.append(word_space[j])
+
+            #处理[]元素
             if word_space[j]=="[":
                 word_space1.append(word_space[j])
                 j=j+1
@@ -164,13 +166,13 @@ def zinc_data_with_bracket_original():
     #print sen_space
     f.close()
 
-    word1=sen_space[0]
-    word_space=list(word1[0])
-    end="\n"
+    # word1=sen_space[0]
+    # word_space=list(word1[0])
+    # end="\n"
 
     zinc_processed=[]
-    organic_smile=[]
-    t=0
+    # organic_smile=[]
+    # t=0
     for i in range(len(sen_space)):
         word1=sen_space[i]
         #m = Chem.MolFromSmiles(word1[0])

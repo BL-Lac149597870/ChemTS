@@ -4,7 +4,7 @@ import random
 import numpy as np
 import random as pr
 from copy import deepcopy
-from types import IntType, ListType, TupleType, StringTypes
+# from types import IntType, ListType, TupleType, StringTypes
 import itertools
 import time
 import math
@@ -124,12 +124,12 @@ def MCTS(root, verbose = False):
         state = root.Clone() # but this state is the state of the initialization .  too important !!!
         """selection step"""
         node_pool=[]
-        print "current found max_score:",max_score
+        print ("current found max_score:",max_score)
 
         while node.childNodes!=[]:
             node = node.Selectnode()
             state.SelectPosition(node.position)
-        print "state position:,",state.position
+        print ("state position:,",state.position)
         #depth.append(len(state.position))
 
 
@@ -207,9 +207,9 @@ def MCTS(root, verbose = False):
     #print "all valid compounds:", len(valid_compound)
     #print "all compounds:",len(all_simulated_compound)
     #print "all score:", all_score
-    print "depth:",depth
-    print len(depth)
-    print "num_searched=",num_searched
+    print ("depth:",depth)
+    print (len(depth))
+    print ("num_searched=",num_searched)
 
 
     return valid_compound
@@ -228,12 +228,12 @@ def UCTchemical():
 if __name__ == "__main__":
     smile_old=zinc_data_with_bracket_original()
     val,smile=zinc_processed_with_bracket(smile_old)
-    print val
+    print (val)
     logP_values = np.loadtxt('logP_values.txt')
     SA_scores = np.loadtxt('SA_scores.txt')
     cycle_scores = np.loadtxt('cycle_scores.txt')
     SA_mean =  np.mean(SA_scores)
-    print len(SA_scores)
+    print (len(SA_scores))
 
     SA_std=np.std(SA_scores)
     logP_mean = np.mean(logP_values)

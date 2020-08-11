@@ -138,11 +138,11 @@ def prepare_data(smile):
             a=list(fp1.ToBitString())
             X_train.append(a)
         else:
-            print i
-            print smile[i]
+            print (i)
+            print (smile[i])
 
     X_train_final=np.matrix(X_train)
-    print X_train_final.shape
+    print (X_train_final.shape)
 
     return X_train_final
 

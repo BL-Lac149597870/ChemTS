@@ -145,8 +145,8 @@ def zinc_logp(smile):
 
     ma=6.66134
 
-    print max(logp_value)
-    print logp_value
+    print (max(logp_value))
+    print (logp_value)
 
 
 def zinc_data_with_bracket_original():

@@ -3,7 +3,7 @@ from math import *
 import random
 import numpy as np
 from copy import deepcopy
-from types import IntType, ListType, TupleType, StringTypes
+# from types import IntType, ListType, TupleType, StringTypes
 import itertools
 import time
 import math
@@ -188,7 +188,7 @@ def check_node_type(new_compound,SA_mean,SA_std,logP_mean,logP_std,cycle_mean,cy
         try:
             m = Chem.MolFromSmiles(str(new_compound[i]))
         except:
-            print None
+            print (None)
         if m!=None and len(new_compound[i])<=81:
             try:
                 logp=Descriptors.MolLogP(m)

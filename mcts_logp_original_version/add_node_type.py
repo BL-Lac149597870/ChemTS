@@ -3,7 +3,7 @@ from math import *
 import random
 import numpy as np
 from copy import deepcopy
-from types import IntType, ListType, TupleType, StringTypes
+# from types import IntType, ListType, TupleType, StringTypes
 import itertools
 import time
 import math
@@ -104,12 +104,12 @@ def check_node_type(new_compound,SA_mean,SA_std,logP_mean,logP_std,cycle_mean,cy
     logp_value=[]
     all_smile=[]
     distance=[]
-    print "SA_mean:",SA_mean
-    print "SA_std:",SA_std
-    print "logP_mean:",logP_mean
-    print "logP_std:",logP_std
-    print "cycle_mean:",cycle_mean
-    print "cycle_std:",cycle_std
+    print ("SA_mean:",SA_mean)
+    print ("SA_std:",SA_std)
+    print ("logP_mean:",logP_mean)
+    print ("logP_std:",logP_std)
+    print ("cycle_mean:",cycle_mean)
+    print ("cycle_std:",cycle_std)
     activity=[]
     score=[]
 
@@ -117,7 +117,7 @@ def check_node_type(new_compound,SA_mean,SA_std,logP_mean,logP_std,cycle_mean,cy
         try:
             m = Chem.MolFromSmiles(str(new_compound[i]))
         except:
-            print None
+            print (None)
         if m!=None and len(new_compound[i])<=82:
             logp=Descriptors.MolLogP(m)
             if logp<10.0:

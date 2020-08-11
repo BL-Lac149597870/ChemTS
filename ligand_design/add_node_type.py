@@ -3,7 +3,7 @@ from math import *
 import random
 import numpy as np
 from copy import deepcopy
-from types import IntType, ListType, TupleType, StringTypes
+# from types import IntType, ListType, TupleType, StringTypes
 import itertools
 import time
 import math

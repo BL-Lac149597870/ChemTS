@@ -3,7 +3,7 @@ from math import *
 import random
 import numpy as np
 from copy import deepcopy
-from types import IntType, ListType, TupleType, StringTypes
+# from types import IntType, ListType, TupleType, StringTypes
 import itertools
 import time
 import math
@@ -60,7 +60,7 @@ def expanded_node(model,state,val):
 
     all_nodes=list(set(all_nodes))
 
-    print all_nodes
+    print (all_nodes)
 
 
 
@@ -82,7 +82,7 @@ def node_to_add(all_nodes,val):
     for i in range(len(all_nodes)):
         added_nodes.append(val[all_nodes[i]])
 
-    print added_nodes
+    print (added_nodes)
 
     return added_nodes
 
@@ -182,7 +182,7 @@ def check_node_type(new_compound,qspr_model):
         try:
             m = Chem.MolFromSmiles(str(new_compound[i]))
         except:
-            print None
+            print (None)
         if m!=None and len(new_compound[i])<=81:
             node_index.append(i)
             valid_compound.append(new_compound[i])
@@ -211,7 +211,7 @@ def check_node_type(new_compound,qspr_model):
     return node_index,score,valid_compound,all_smile
 
 def logp_calculation(new_compound):
-    print new_compound[0]
+    print (new_compound[0])
     logp_value=[]
     valid_smile=[]
     all_smile=[]
