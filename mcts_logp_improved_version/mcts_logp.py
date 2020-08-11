@@ -240,7 +240,7 @@ if __name__ == "__main__":
     smile_old=zinc_data_with_bracket_original()
     val,smile=zinc_processed_with_bracket(smile_old)
     print (val)
-    #val=['\n', '&', 'C', '(', ')', 'c', '1', '2', 'o', '=', 'O', 'N', '3', 'F', '[C@@H]', 'n', '#', 'S', 'Cl', '[O-]', '[C@H]', '[NH+]', '[C@]', 's', 'Br' '[nH]', '[NH3+]', '4', '[NH2+]', '[C@@]', '[N+]', '[nH+]', '[N-]', '[n+]', 'I', '[n-]', '[OH+]', '[NH-]', '[o+]', '[CH2-]', '[CH-]', '[O+]']
+    # val=['\n', '&', 'C', '(', ')', 'c', '1', '2', 'o', '=', 'O', 'N', '3', 'F', '[C@@H]', 'n', '#', 'S', 'Cl', '[O-]', '[C@H]', '[NH+]', '[C@]', 's', 'Br' '[nH]', '[NH3+]', '4', '[NH2+]', '[C@@]', '[N+]', '[nH+]', '[N-]', '[n+]', 'I', '[n-]', '[OH+]', '[NH-]', '[o+]', '[CH2-]', '[CH-]', '[O+]']
 
     logP_values = np.loadtxt('logP_values.txt')
     SA_scores = np.loadtxt('SA_scores.txt')
@@ -258,6 +258,6 @@ if __name__ == "__main__":
     #val=['\n', '&', 'C', '(', ')', 'c', '1', '2', 'o', '=', 'O', 'N', '3', 'F', '[C@@H]', 'n', '#', 'S', 'Cl', '[O-]', '[C@H]>
     val2=['C', '(', ')', 'c', '1', '2', 'o', '=', 'O', 'N', '3', 'F', '[C@@H]', 'n', '-', '#', 'S', 'Cl', '[O-]', '[C@H]', '[NH+]', '[C@]', 's', 'Br', '/', '[nH]', '[NH3+]', '4', '[NH2+]', '[C@@]', '[N+]', '[nH+]', '\\', '[S@]', '5', '[N-]', '[n+]', '[S@@]', '[S-]', '6', '7', 'I', '[n-]', 'P', '[OH+]', '[NH-]', '[P@@H]', '[P@@]', '[PH2]', '[P@]', '[P+]', '[S+]', '[o+]', '[CH2-]', '[CH-]', '[SH+]', '[O+]', '[s+]', '[PH+]', '[PH]', '8', '[S@@+]']
 
-    model=loaded_model()
+    model = loaded_model()
     #acitivity_model=loaded_activity_model()
     valid_compound=UCTchemical()
